@@ -1,0 +1,61 @@
+# =====================================================================
+# requirements.txt - Cargo Demand Agent
+# =====================================================================
+# Python 3.11
+# =====================================================================
+
+# --- Core: LangChain 1.x + LangGraph --------------------------------
+# LangChain 1.x moved classic integrations (EnsembleRetriever, etc.)
+# to langchain-classic. Both are required.
+langchain>=1.0.0
+langchain-core>=1.0.0
+langchain-classic>=1.0.0
+langgraph>=1.0.0
+langchain-community>=0.4.0
+
+# --- LLM: Upstage Solar-Pro -----------------------------------------
+langchain-upstage>=0.7.0
+
+# --- Vector DB ------------------------------------------------------
+chromadb>=0.5.0
+langchain-chroma>=1.0.0
+
+# --- Embedding: BGE-M3 (via sentence-transformers) ------------------
+sentence-transformers>=3.0.0
+langchain-huggingface>=1.0.0
+
+# --- Forecast Tool: LightGBM + SHAP ---------------------------------
+lightgbm>=4.5.0
+shap>=0.46.0
+scikit-learn>=1.5.0
+joblib>=1.4.0
+
+# --- Sparse retrieval: BM25 + Korean morphological tokenizer --------
+rank_bm25>=0.2.2
+kiwipiepy>=0.20.0
+
+# --- Web Search Tool: Tavily ----------------------------------------
+tavily-python>=0.5.0
+
+# --- Data Handling --------------------------------------------------
+pandas>=2.2.0
+numpy>=1.26.0,<2.0.0    # numpy 2.x has compat issues with some libs
+
+# --- Schema / Config ------------------------------------------------
+pydantic>=2.8.0
+python-dotenv>=1.0.0
+
+# --- UI (optional, for demo) ----------------------------------------
+streamlit>=1.38.0
+
+# --- Utilities ------------------------------------------------------
+python-frontmatter>=1.1.0    # parse YAML frontmatter in report .md files
+markdown>=3.7
+
+# --- Notebook (optional, for practice/01_explore.ipynb) -------------
+matplotlib>=3.8.0
+seaborn>=0.13.0
+jupyter>=1.0.0
+
+# --- Testing (optional) ---------------------------------------------
+# pytest>=8.0.0

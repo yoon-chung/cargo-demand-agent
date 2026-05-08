@@ -1,0 +1,85 @@
+{
+  "model_type": "LightGBM",
+  "horizons": [
+    1,
+    3,
+    6,
+    12
+  ],
+  "n_lags": 12,
+  "target_col": "total_teu",
+  "exo_cols": [
+    "freightos_index",
+    "diesel_price_usd",
+    "gscpi",
+    "us_manuf_pmi",
+    "peak_season"
+  ],
+  "feature_names": [
+    "teu_log_lag_1",
+    "teu_log_lag_2",
+    "teu_log_lag_3",
+    "teu_log_lag_4",
+    "teu_log_lag_5",
+    "teu_log_lag_6",
+    "teu_log_lag_7",
+    "teu_log_lag_8",
+    "teu_log_lag_9",
+    "teu_log_lag_10",
+    "teu_log_lag_11",
+    "teu_log_lag_12",
+    "freightos_index",
+    "diesel_price_usd",
+    "gscpi",
+    "us_manuf_pmi",
+    "peak_season"
+  ],
+  "training_n_samples": 204,
+  "training_period": {
+    "start": "2009-01",
+    "end": "2025-12"
+  },
+  "rolling_origin_backtest": {
+    "h1": {
+      "n": 8,
+      "RMSE": 79950.11,
+      "MAE": 60240.13,
+      "MAPE_pct": 6.5226
+    },
+    "h3": {
+      "n": 8,
+      "RMSE": 74365.81,
+      "MAE": 56030.61,
+      "MAPE_pct": 6.3169
+    },
+    "h6": {
+      "n": 8,
+      "RMSE": 116411.8,
+      "MAE": 110356.82,
+      "MAPE_pct": 13.2055
+    },
+    "h12": {
+      "n": 7,
+      "RMSE": 119572.54,
+      "MAE": 94711.06,
+      "MAPE_pct": 10.2201
+    }
+  },
+  "random_state": 42,
+  "hyperparameters": {
+    "n_estimators": 300,
+    "learning_rate": 0.05,
+    "num_leaves": 15,
+    "min_child_samples": 5,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8
+  },
+  "preprocessing": {
+    "target": "log1p transform on TEU",
+    "exog": "StandardScaler (z-normalize) on full series"
+  },
+  "data_notes": {
+    "fbx_source": "synthetic (real FBX publicly tracked from 2017+)",
+    "pmi_source": "FRED IPMAN (Industrial Production: Manufacturing) as proxy (ISM PMI no longer free on FRED)"
+  }
+}

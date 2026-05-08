@@ -1,0 +1,80 @@
+# =====================================================================
+# .gitignore - Cargo Demand Agent
+# =====================================================================
+
+# ─── Python ──────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+*.egg
+build/
+dist/
+.eggs/
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# ─── Virtual environments ────────────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+
+# ─── IDE / Editor ────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ─── Jupyter ─────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ─── Secrets / Config ────────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# ─── Reference materials (course PDFs, personal notes) ───────────────
+_refs/
+*.pdf
+*.docx
+*.pptx
+!docs/**/*.pdf
+
+# ─── Vector DB (re-built locally) ────────────────────────────────────
+chroma_db_*/
+data/chroma_db_*/
+
+# ─── Raw / Working data (not for GitHub) ─────────────────────────────
+data/raw/
+data/working/
+pola_manual_archive/
+
+# ─── Model files ─────────────────────────────────────────────────────
+# Note: data/models/*.pkl are PUBLIC for this project
+# (LightGBM models trained on public POLA data).
+# Other .pkl files (cached embeddings, etc.) should be ignored.
+*.pkl
+!data/models/*.pkl
+
+# ─── Logs ────────────────────────────────────────────────────────────
+*.log
+logs/
+
+# ─── Streamlit ───────────────────────────────────────────────────────
+.streamlit/secrets.toml
+
+# ─── OS-specific ─────────────────────────────────────────────────────
+*.bak
+*.tmp
+*.tmp.*
+*~
