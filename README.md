@@ -1,3 +1,7 @@
+[English README](README_eng.md)
+
+---
+
 # 화물 수요예측 에이전트 (Cargo Demand Agent)
 
 > LA 항만 컨테이너 물동량 예측 결과를 머신러닝 수요예측 모델 + 사내 RAG + 웹검색으로
